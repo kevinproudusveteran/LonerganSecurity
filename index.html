@@ -106,6 +106,68 @@
             text-transform: uppercase;
         }
 
+        /* Hamburger Menu */
+        .hamburger-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .hamburger-btn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 24px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger-btn span {
+            width: 100%;
+            height: 3px;
+            background: var(--navy);
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: var(--white);
+            border-top: 3px solid var(--gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            flex-direction: column;
+            min-width: 280px;
+        }
+
+        .nav-menu.open {
+            display: flex;
+        }
+
+        .nav-menu a {
+            color: var(--navy);
+            text-decoration: none;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--light-gray);
+            color: var(--gold);
+        }
+
         /* Hero Section */
         #hero {
             background-color: var(--navy);
@@ -221,13 +283,13 @@
             display: flex;
             gap: 30px;
             justify-content: center;
-            flex-wrap: wrap; /* Allows cards to drop to the next line */
+            flex-wrap: wrap;
         }
 
         .service-card {
             background: var(--white);
             padding: 30px;
-            flex: 1 1 300px; /* Allows cards to be flexible but maintain a minimum width */
+            flex: 1 1 300px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             border-top: 4px solid var(--gold);
             text-align: left;
@@ -323,12 +385,34 @@
             <div class="logo">
                 <img src="Letterhead.jpg" alt="Lonergan Security Solutions LLC">
             </div>
-            <nav class="nav-links">
-                <a href="#about">About Us</a>
-                <a href="#services">Services</a>
-                <a href="#areas">Service Area</a>
-                <a href="#contact" class="btn">Free Consultation</a>
-            </nav>
+            
+            <div style="display: flex; align-items: center;">
+                <nav class="nav-links">
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="#areas">Service Area</a>
+                    <a href="#contact" class="btn">Free Consultation</a>
+                </nav>
+                
+                <!-- Hamburger Menu Top Right -->
+                <div class="hamburger-wrapper">
+                    <button class="hamburger-btn" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- Navigates to Separate Pages -->
+                    <nav id="navMenu" class="nav-menu">
+                        <a href="corporate-services.html">Corporate Services</a>
+                        <a href="executive-protection.html">Executive Protection</a>
+                        <a href="background-checks.html">Background Checks</a>
+                        <a href="comprehensive-investigations.html">Comprehensive Investigations</a>
+                        <a href="additional-services.html">Additional Services</a>
+                        <a href="faqs.html">FAQs</a>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -443,4 +527,16 @@
     <footer>
         <div class="container" style="padding: 20px 0;">
             Copyright ©2026 Lonergan Security Solutions LLC
-    
+        </div>
+    </footer>
+
+    <!-- Script to toggle the Hamburger Menu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navMenu");
+            menu.classList.toggle("open");
+        }
+    </script>
+
+</body>
+</html>
