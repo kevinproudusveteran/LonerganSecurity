@@ -354,7 +354,41 @@
             color: var(--navy);
             font-size: 1.1rem;
         }
-
+        /* Affiliates Section */
+        #affiliates {
+            background-color: var(--white);
+            padding: 50px 0;
+            border-top: 1px solid var(--light-gray);
+        }
+        .affiliates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .affiliate-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        .affiliate-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .affiliate-item a {
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .affiliate-item a:hover {
+            color: var(--gold);
+        }
+        
         /* Footer */
         footer {
             background-color: #0b1a2e;
@@ -530,7 +564,45 @@
             </div>
         </div>
     </section>
+    <section id="affiliates">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem;">Affiliates & Associates</h2>
+            <div class="affiliates-grid">
+                
+                <div class="affiliate-item">
+                    <a href="https://nysecfbinaa.org/" target="_blank"><img src="70746.png" alt="FBINAA Logo"></a>
+                    <a href="https://nysecfbinaa.org/" target="_blank">FBINAA New York State & Eastern Canada Chapter</a>
+                </div>
 
+                <div class="affiliate-item">
+                    <a href="https://asisnyc.org/" target="_blank"><img src="71762.png" alt="ASIS NYC Logo"></a>
+                    <a href="https://asisnyc.org/" target="_blank">ASIS International NYC Chapter</a>
+                </div>
+
+                <div class="affiliate-item">
+                    <a href="https://www.nypdshield.org/" target="_blank"><img src="71798.png" alt="NYPD Shield Logo"></a>
+                    <a href="https://www.nypdshield.org/" target="_blank">NYPD Shield</a>
+                </div>
+
+                <div class="affiliate-item">
+                    <a href="https://www.personalprotection.com/" target="_blank"><img src="71797.png" alt="EPI Logo"></a>
+                    <a href="https://www.personalprotection.com/" target="_blank">Executive Protection Institute</a>
+                </div>
+
+                <div class="affiliate-item">
+                    <a href="https://ninelivesassociate.com/home/index" target="_blank"><img src="71796.png" alt="Nine Lives Association Logo"></a>
+                    <a href="https://ninelivesassociate.com/home/index" target="_blank">Nine Lives</a>
+                </div>
+
+                <div class="affiliate-item">
+                    <a href="https://proudusveteran.org/" target="_blank"><img src="71155.png" alt="Proud US Veteran Logo"></a>
+                    <a href="https://proudusveteran.org/" target="_blank">Proud US Veteran</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <div class="container" style="padding: 20px 0;">
             Copyright ©2026 Lonergan Security Solutions LLC
