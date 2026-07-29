@@ -587,14 +587,95 @@
             </div>
             
             <div class="contact-form">
-                <form action="mailto:contact@lonergansecuritysolutions.com" method="post" enctype="text/plain">
-                    <input type="text" name="Name" placeholder="Full Name" required>
-                    <input type="email" name="Email" placeholder="Email Address" required>
-                    <input type="tel" name="Phone" placeholder="Phone Number">
-                    <textarea name="Inquiry_Description" placeholder="Brief Description of Matter (Confidential)" required></textarea>
-                    <button type="submit" class="btn" style="width: 100%;">Submit Confidential Inquiry</button>
-                </form>
+    <form action="mailto:contact@lonergansecuritysolutions.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Full Name" required>
+        <input type="email" name="Email" placeholder="Email Address" required>
+        <input type="tel" name="Phone" placeholder="Phone Number">
+
+        <!-- Clickable Service Buttons Styles -->
+        <style>
+            .service-tag {
+                background-color: white;
+                border: 1px solid var(--navy);
+                color: var(--navy);
+                padding: 8px 12px;
+                border-radius: 3px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-family: 'Roboto', sans-serif;
+                transition: all 0.3s;
+            }
+            .service-tag.active {
+                background-color: var(--gold);
+                color: white;
+                border-color: var(--gold);
+            }
+        </style>
+
+        <!-- The Buttons -->
+        <div style="margin-bottom: 15px; text-align: left;">
+            <p style="margin-bottom: 10px; font-size: 0.95rem; color: var(--dark-gray); font-weight: bold;">What services are you interested in?</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                <!-- Core Services & Specific Requests -->
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Corporate Services')">Corporate Services</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Executive Protection')">Executive Protection</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Youth Event Security')">Youth Event Security</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Scams')">Scams</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Threats')">Threats</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Harassment & Stalking')">Harassment & Stalking</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Background Checks')">Background Checks</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Attorney Support')">Attorney Support</button>
+
+                <!-- From Screenshot 1 -->
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Insurance Claims Investigations')">Insurance Claims Investigations</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Genealogy Research')">Genealogy Research</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Missing Person Location')">Missing Person Location</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Infidelity Investigations')">Infidelity Investigations</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Skip Tracing')">Skip Tracing</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Asset Searches')">Asset Searches</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Social Media Intelligence (SOCMINT)')">Social Media Intelligence (SOCMINT)</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Process Serving')">Process Serving</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Special Event Security')">Special Event Security</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Child Custody')">Child Custody</button>
+
+                <!-- From Screenshot 2 -->
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Active Shooter Training')">Active Shooter Training</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Threat Assessments')">Threat Assessments</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Travel Security Briefings')">Travel Security Briefings</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Workplace Violence Prevention')">Workplace Violence Prevention</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Emergency Action Plans')">Emergency Action Plans</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Trauma Kits & Readiness')">Trauma Kits & Readiness</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Crisis Management')">Crisis Management</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Situational Awareness Training')">Situational Awareness Training</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Intelligence Reports')">Intelligence Reports</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Theft Investigations')">Theft Investigations</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Integrity Testing')">Integrity Testing</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'Site Surveys')">Site Surveys</button>
+                <button type="button" class="service-tag" onclick="toggleService(this, 'HR Support & Consulting')">HR Support & Consulting</button>
             </div>
+        </div>
+
+        <!-- The Text Box (Connected to the buttons) -->
+        <textarea id="matter-box" name="Inquiry_Description" placeholder="Brief Description of Matter (Confidential)" style="width: 100%; height: 150px; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Roboto', sans-serif; box-sizing: border-box; resize: vertical; margin-bottom: 20px;" required></textarea>
+
+        <!-- The Magic Script -->
+        <script>
+            function toggleService(btn, service) {
+                btn.classList.toggle('active');
+                let box = document.getElementById('matter-box');
+                let text = "- " + service + "\n";
+                if (btn.classList.contains('active')) {
+                    box.value += text;
+                } else {
+                    box.value = box.value.replace(text, "");
+                }
+            }
+        </script>
+
+        <button type="submit" class="btn" style="width: 100%;">Submit Confidential Inquiry</button>
+    </form>
+</div>
+
         </div>
     </section>
     <section id="affiliates">
